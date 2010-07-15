@@ -20,8 +20,7 @@ def factorize(number)
 end
 
 def prime?(number)
-  factors = factorize(number)
-  factors.uniq.size == 1 ? true : false
+  factorize(number).uniq.size == 1 ? true : false
 end
 
 p factorize(600851475143)
