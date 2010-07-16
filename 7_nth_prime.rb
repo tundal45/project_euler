@@ -11,7 +11,7 @@
 def factorize(number)
   factor = 2
   factors = []
-  while factor < number
+  while factor <= number
     while (number % factor).zero?
       number = number/factor
       factors << factor
@@ -22,7 +22,7 @@ def factorize(number)
 end
 
 def prime?(number)
-  factorize(number).uniq.size == 1 ? true : false
+  factorize(number).size == 1 ? true : false
 end
 
 def nth_prime(n)
@@ -32,9 +32,9 @@ def nth_prime(n)
     count = count + 1 if prime?(number)
     number = number + 1
   end
-  number
+  number-1
 end
 
-start_time = Time.now
-puts "The 10001st prime is #{nth_prime(10001)}"
-puts "Calculation took #{Time.now - start_time} seconds"
+ start_time = Time.now
+ puts "The 10001st prime is #{nth_prime(10001)}"
+ puts "Calculation took #{Time.now - start_time} seconds"
